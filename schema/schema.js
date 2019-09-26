@@ -14,9 +14,9 @@ const LunchType = new GraphQLObjectType({
     fields: () => ({
         flight_number: { type: GraphQLInt },
         mission_name: { type: GraphQLString },
-        luanch_year: { type: GraphQLString },
-        luanch_date_local: { type: GraphQLString },
-        luanch_succes: { type: GraphQLBoolean },
+        launch_year: { type: GraphQLString },
+        launch_date_local: { type: GraphQLString },
+        launch_success: { type: GraphQLBoolean },
         rocket: { type: RocketType },
     })
 })
@@ -24,7 +24,7 @@ const LunchType = new GraphQLObjectType({
 const RocketType = new GraphQLObjectType({
     name: "Rocket",
     fields: () => ({
-        id: { type: GraphQLString },
+        rocket_id: { type: GraphQLString },
         rocket_name: { type: GraphQLString },
         rocket_type: { type: GraphQLString },
     })
@@ -41,7 +41,7 @@ const RootQuery = new GraphQLObjectType({
             
             }
         },
-        launche: {
+        launch: {
             type: LunchType,
             args: {
                 flight_number: {
